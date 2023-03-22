@@ -10,5 +10,9 @@ describe("basic math", () => {
     it("indicates the number is even", () => {
       expect(evenOrOdd(4)).toBe("Even");
     });
+
+    it("indicates the number is odd", () => {
+      expect(evenOrOdd(3)).toBe("Odd");
+    });
   });
 });
