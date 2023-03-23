@@ -10,30 +10,14 @@
 
         <nav class="ml-12 h-full">
           <ul class="flex h-full list-none">
-            <li class="h-full">
-              <a href="" class="flex h-full items-center py-2.5">Teams</a>
-            </li>
-
-            <li class="ml-9 h-full">
-              <a href="" class="flex h-full items-center py-2.5">Location</a>
-            </li>
-
-            <li class="ml-9 h-full">
-              <a href="" class="flex h-full items-center py-2.5"
-                >Life at Google</a
-              >
-            </li>
-
-            <li class="ml-9 h-full">
-              <a href="" class="flex h-full items-center py-2.5">How We Hire</a>
-            </li>
-
-            <li class="ml-9 h-full">
-              <a href="" class="flex h-full items-center py-2.5">Students</a>
-            </li>
-
-            <li class="ml-9 h-full">
-              <a href="" class="flex h-full items-center py-2.5">Jobs</a>
+            <li
+              v-for="menuItem in menuItems"
+              :key="menuItem"
+              class="ml-9 h-full first:ml-0"
+            >
+              <a href="" class="flex h-full items-center py-2.5">
+                {{ menuItem }}
+              </a>
             </li>
           </ul>
         </nav>
@@ -49,6 +33,14 @@ export default {
     return {
       company: "Google Careers",
       url: "https://careers.google.com",
+      menuItems: [
+        "Teams",
+        "Locations",
+        "Life at Google",
+        "How We Hire",
+        "Students",
+        "Jobs",
+      ],
     };
   },
 };
