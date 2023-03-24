@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "ActionButton",
+  name: "ActionButton", h
   props: ["text"],
   data() {
     return {
