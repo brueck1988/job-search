@@ -4,9 +4,9 @@
       <div
         class="mx-auto flex h-full flex-nowrap border-b border-solid border-brand-gray-1 px-8"
       >
-        <a :href="url" class="flex h-full items-center text-xl">{{
-          company
-        }}</a>
+        <a :href="url" class="flex h-full items-center text-xl">
+          {{ company }}
+        </a>
 
         <nav class="ml-12 h-full">
           <ul class="flex h-full list-none">
@@ -27,6 +27,7 @@
           <action-button v-else text="Sign In" @click="signInUser" />
         </div>
       </div>
+      <the-subnav />
     </div>
   </header>
 </template>
@@ -34,12 +35,14 @@
 <script>
 import ActionButton from "@/components/ActionButton.vue";
 import ProfileImage from "@/components/ProfileImage.vue";
+import TheSubnav from "@/components/TheSubnav.vue";
 
 export default {
   name: "MainNav",
   components: {
     ActionButton,
     ProfileImage,
+    TheSubnav,
   },
   data() {
     return {
