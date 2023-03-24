@@ -40,3 +40,10 @@
 // const squares = numbers.map((number) => number * number);
 
 // console.log(squares);
+
+// //Dynamic Object Properties in ES6
+// const favoriteFood = "sushi";
+
+// const goodFoods = {
+//   [favoriteFood]: true, // The square brackets around favoriteFood allow the variable definition to be used
+// };
