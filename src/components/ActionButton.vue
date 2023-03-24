@@ -16,6 +16,9 @@ export default {
       type: String,
       required: false,
       default: "primary",
+      validator(value) {
+        return ["primary", "secondary"].includes(value); // Vue Validator expects true to be returned if valid
+      },
     },
   },
   computed: {
