@@ -8,13 +8,13 @@
 <script>
 export default {
   name: "TheHeadline",
-	data() {
-		return {
-			sample: "Hello!"m
-		};
-	},
-	created() {
-		console.log("Hey, I've been created. My data exists. Look: ", this.sample)
-	}
+  data() {
+    return {
+      sample: "Hello!",
+    };
+  },
+  created() {
+    console.log("Hey, I've been created. My data exists. Look: ", this.sample);
+  },
 };
 </script>
