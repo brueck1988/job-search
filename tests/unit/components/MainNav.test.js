@@ -5,7 +5,13 @@ import MainNav from "@/components/MainNav.vue";
 
 describe("MainNav", () => {
   it("displays company name", () => {
-    render(MainNav);
+    render(MainNav, {
+      global: {
+        stubs: {
+          FontAwesomeIcon: true,
+        },
+      },
+    });
     const companyName = screen.getByText("Google Careers");
     expect(companyName).toBeInTheDocument();
   });
@@ -28,7 +34,13 @@ describe("MainNav", () => {
 
   describe("when the user signs in", () => {
     it("displays user profile picture", async () => {
-      render(MainNav);
+      render(MainNav, {
+        global: {
+          stubs: {
+            FontAwesomeIcon: true,
+          },
+        },
+      });
 
       let profileImage = screen.queryByRole("img", {
         name: /User profile image/i,
