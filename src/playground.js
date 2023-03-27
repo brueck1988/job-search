@@ -47,3 +47,20 @@
 // const goodFoods = {
 //   [favoriteFood]: true, // The square brackets around favoriteFood allow the variable definition to be used
 // };
+
+// setTimeout, setInterval and cleanInterval Functions in JS
+// setTimeout(() => {
+//   // Run function once after 2 seconds
+//   console.log("I will print 2 seoconds after the progrma starts");
+// }, 2000); // time in milliseconds 2000 = 2 seconds
+
+// const interval = setInterval(() => {
+//   // Runs the function every 2 seconds
+//   console.log("I will print 2 seoconds after the progrma starts");
+// }, 2000); // time in milliseconds 2000 = 2 seconds
+// //Javascript will run the entire file once it's run, and then keep running the interval
+
+// setTimeout(() => {
+//   // Run function once after 10 seconds
+//   clearInterval(interval); // Stop Interval from running forever
+// }, 10000); // time in milliseconds 10000 = 10 seconds
