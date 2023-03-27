@@ -1,7 +1,11 @@
 <template>
   <section>
-    <h1>{{ action }} for Everyone</h1>
-    <h2>Find your next job at Google</h2>
+    <h1 class="mb-14 text-8xl font-bold tracking-tighter">
+      <span :class="actionClasses">{{ action }}</span>
+      <br />
+      for everyone
+    </h1>
+    <h2 class="text-3xl font-light">Find your next job at Google.</h2>
   </section>
 </template>
 
@@ -11,15 +15,25 @@ export default {
   data() {
     return {
       action: "Build",
-			interval: null,
+      interval: null,
     };
+  },
+  computed: {
+    actionClasses() {
+      return {
+        build: this.action === "Build",
+        create: this.action === "Create",
+        design: this.action === "Design",
+        code: this.action === "Code",
+      };
+    },
   },
   created() {
     this.changeTitle();
   },
-	beforeUnmount() {
-		clearInterval(this.interval);
-	}
+  beforeUnmount() {
+    clearInterval(this.interval);
+  },
   methods: {
     changeTitle() {
       this.interval = setInterval(() => {
@@ -33,3 +47,20 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.build {
+  color: #1a73e8;
+}
+
+.create {
+  color: #34a853;
+}
+
+.design {
+  color: #f9ab00;
+}
+.code {
+  color: #d93025;
+}
+</style>
