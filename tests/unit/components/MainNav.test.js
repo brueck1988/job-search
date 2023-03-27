@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import MainNav from "@/components/MainNav.vue";
 
 describe("MainNav", () => {
-  it("displays company name", () => {
+  const renderMainNav = () => {
     render(MainNav, {
       global: {
         stubs: {
@@ -12,12 +12,18 @@ describe("MainNav", () => {
         },
       },
     });
+  };
+
+  it("displays company name", () => {
+    renderMainNav();
+
     const companyName = screen.getByText("Google Careers");
     expect(companyName).toBeInTheDocument();
   });
 
   it("displays menu items for navigation", () => {
-    render(MainNav);
+    renderMainNav();
+
     const navigationMenuItems = screen.getAllByRole("listitem");
     const navigationMenuTexts = navigationMenuItems.map(
       (item) => item.textContent
@@ -34,13 +40,7 @@ describe("MainNav", () => {
 
   describe("when the user signs in", () => {
     it("displays user profile picture", async () => {
-      render(MainNav, {
-        global: {
-          stubs: {
-            FontAwesomeIcon: true,
-          },
-        },
-      });
+      renderMainNav();
 
       let profileImage = screen.queryByRole("img", {
         name: /User profile image/i,
