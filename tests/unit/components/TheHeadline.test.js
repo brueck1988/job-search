@@ -1,3 +1,4 @@
+import { nextTick } from "vue";
 import { render, screen } from "@testing-library/vue";
 
 import TheHeadline from "@/components/TheHeadline.vue";
@@ -30,6 +31,19 @@ describe("TheHeadline", () => {
     render(TheHeadline);
 
     expect(mock).toHaveBeenCalled();
+    vi.useRealTimers(); // Remove/clean-up all mocks
+  });
+
+  it("swaps action verb after interval", async () => {
+    vi.useFakeTimers(); // replace all time related functions with mocks
+    render(TheHeadline);
+    vi.advanceTimersToNextTimer();
+
+    await nextTick();
+    const actionPhrase = screen.getByRole("heading", {
+      name: /create for everyone/i,
+    });
+    expect(actionPhrase).toBeInTheDocument();
     vi.useRealTimers(); // Remove/clean-up all mocks
   });
 });
